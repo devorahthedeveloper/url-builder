@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<title>Url Builder</title>
+		<link rel="stylesheet" href="assets/css/global.css">
+		<link rel="stylesheet" href="assets/css/url-tester.css">
+		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="global_container">
+		<div class="rowGroup  mainContent" id="mc">
+			<section class="row  pattern-C">
+				<div class="row-inner">
+					<article class="C">
+						<h1>URL Builder</h1>
+						<div class="urlbox">
+							<section class="toolbox">
+								<div class="url"><a href="#" target="_blank"><span class="part">https</span><span class="sep">://</span><span class="part">western-heart.com</span><span class="sep">/</span><span class="sep">?</span><span class="param">fruit</span><span class="eq">=</span><span class="param">apple</span></a></div>
+							</section>								
+							<div class="url-options">
+								<a class="url-go" href="#" target="_blank">Go to URL <i class="fa fa-external-link"></i></a>
+								<a class="url-copy" href="#">Copy URL to clipboard <i class="fa fa-copy"></i></a>
+							</div>
+						</div>						
+						<div class="contains-3">
+							<div class="unit size2of3">
+								<section class="toolbox first">
+									<h3>Query parameters</h3>
+									<ul class="controls" id="params">
+										<li data-value="fruit" class="has-modal required">
+											<label>fruit</label> <input type="text" value="apple" data-value="fruit">
+											<div class="modal">
+												<ul class="inner">
+													<li class="data">
+														<select data-value="fruit" selected="selected">
+															<option value="">Select a fruit</option>
+															<option value="fxcm">fxcm</option>
+															<option value="apple">apple</option>
+															<option value="orange">orange</option>
+															<option value="grapefruit">grapefruit</option>
+															<option value="banana">banana</option>
+															<option value="kiwi">kiwi</option>
+															<option value="lemon">lemon</option>
+															<option value="kumquat">kumquat</option>
+															<option value="grape">grape</option>
+															<option value="pear">pear</option>
+															<option value="cherry">cherry</option>
+															<option value="raspberry">raspberry</option>
+															<option value="blackberry">blackberry</option>
+														</select>
+													</li>
+													<li class="choose accept"><i class="fa fa-check"></i></li>
+													<li class="choose decline"><i class="fa fa-times"></i></li>
+												</ul>
+											</div>
+
+											<div class="choose edit"><i class="fa fa-pencil"></i></div><div class="choose delete"><i class="fa fa-trash-o"></i></div>
+										</li>
+										<li data-value="beverage" class="has-modal required">
+											<label>beverage</label> <input type="text" data-value="beverage">
+											<div class="modal">
+												<ul class="inner">
+													<li class="data">
+														<select data-value="beverage" selected="selected">
+															<option value="">Select a beverage</option>
+															<option value="cider">cider</option>
+															<option value="lemonade">lemonade</option>
+															<option value="beer">beer</option>
+															<option value="soda">soda</option>
+															<option value="water">water</option>
+															<option value="seltzer">seltzer</option>
+															<option value="orange juice">orange juice</option>
+															<option value="white wine">white wine</option>
+															<option value="sangria">sangria</option>
+															<option value="tea">tea</option>
+															<option value="coffee">coffee</option>
+															<option value="malted">malted</option>
+														</select>
+													</li>
+													<li class="choose accept"><i class="fa fa-check"></i></li>
+													<li class="choose decline"><i class="fa fa-times"></i></li>
+												</ul>
+											</div>
+											<div class="choose edit"><i class="fa fa-pencil"></i></div><div class="choose delete"><i class="fa fa-trash-o"></i></div>
+										</li>
+										<li data-value="appetizer" class="has-modal required">
+											<label>appetizer</label> <input type="text" data-value="appetizer">
+											<div class="modal">
+												<ul class="inner">
+													<li class="data">
+														<select data-value="appetizer" selected="selected">
+															<option value="">Select a appetizer</option>
+															<option value="salad">salad</option>
+															<option value="soup">soup</option>
+														</select>
+													</li>
+													<li class="choose accept"><i class="fa fa-check"></i></li>
+													<li class="choose decline"><i class="fa fa-times"></i></li>
+												</ul>
+											</div>
+											<div class="choose edit"><i class="fa fa-pencil"></i></div><div class="choose delete"><i class="fa fa-trash-o"></i></div>
+										</li>
+										<li data-value="entree" class="has-modal">
+											<label>entree</label> <input type="text" data-value="entree">
+											<div class="modal">
+												<ul class="inner">
+													<li class="data">
+														<select data-value="entree" selected="selected">
+															<option value="">Select an entree</option>
+															<option value="chicken">chicken</option>
+															<option value="burger">burger</option>
+														</select>
+													</li>
+													<li class="choose accept"><i class="fa fa-check"></i></li>
+													<li class="choose decline"><i class="fa fa-times"></i></li>
+												</ul>
+											</div>
+											<div class="choose edit"><i class="fa fa-pencil"></i></div><div class="choose delete"><i class="fa fa-trash-o"></i></div>
+										</li>										
+										<li data-value="dessert" class="has-modal">
+											<label>dessert</label> <input type="text" data-value="dessert">
+											<div class="modal">
+												<ul class="inner">
+													<li class="data">
+														<select data-value="dessert" selected="selected">
+															<option value="">Select an application type</option>
+															<option value="ice cream">ice cream</option>
+															<option value="souffle">souffle</option>
+															<option value="cheese platter">cheese platter</option>
+															<option value="gelato">gelato</option>
+															<option value="banana bread">banana bread</option>
+															<option value="thin mints">thin mints</option>
+														</select>
+													</li>
+													<li class="choose accept"><i class="fa fa-check"></i></li>
+													<li class="choose decline"><i class="fa fa-times"></i></li>
+												</ul>
+											</div>
+											<div class="choose edit"><i class="fa fa-pencil"></i></div><div class="choose delete"><i class="fa fa-trash-o"></i></div>
+										</li>
+									</ul>
+									<p>Note: Parameters will only be added to URL if there is a value set.</p>
+								</section>								
+							</div>
+							<div class="unit size1of3">
+								<section class="toolbox">
+									<h3>Ambience</h3>
+									<ul class="controls" id="ambience">
+										<li class="button" data-value="posh">posh</li>
+										<li class="button" data-value="rustic">rustic</li>
+										<li class="button current" data-value="relaxed">relaxed</li>
+									</ul>
+									<div class="log">URL: <span class="txt">secure4.fxcorporate.com/tr</span></div>
+								</section>
+								<section class="toolbox contains-3 has-gutter gutter-md">
+									<h3>Protocol</h3>
+									<ul class="controls" id="protocol">
+										<li class="button" data-value="http">http</li>
+										<li class="button current" data-value="https">https</li>
+									</ul>
+								</section>
+								<section class="toolbox">
+									<h3>Birthday?</h3>
+									<input type="checkbox" name="birthday" id="birthday"> Do you require birthday treatment?
+								</section>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+		</div>
+	</div>
+	<div class="branding"><img src="assets/img/make-a-splash-small.png">Brought to you by <a href="http://devorahthedeveloper.github.io">Devorah</a> <span class="copyright">&copy; 2015</span></div>
+
+	<script src="assets/script/jquery.min.js" type="text/javascript"></script>
+	<script src="assets/script/url-tester.js" type="text/javascript"></script>
+
+</body>
+</html>
