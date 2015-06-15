@@ -1,0 +1,104 @@
+
+/***************** THEMES ******************/
+/* ----- Light ----- */
+body[data-theme="default-light"] {color:#222;background-color: #e8e8e8;}
+body[data-theme="default-light"] h1{color:#222;}
+body[data-theme="default-light"] h3 {color:#222;border-bottom-color: #e3e3e3;}
+body[data-theme="default-light"] a,
+body[data-theme="default-light"] a:active,
+body[data-theme="default-light"] a:visited {color:#0059B3;}
+body[data-theme="default-light"] .toolbox {background-color: #f8f8f8;}
+body[data-theme="default-light"] .toolbox .log.hover {color:#A9B5C0;}
+/* standard button styles */
+body[data-theme="default-light"] .button {color:#8B8B8B;background-color: #e3e3e3;}
+body[data-theme="default-light"] .button:hover,
+body[data-theme="default-light"] .button.hover {color:#fff;background-color: #001C35;} /* .hover class is for zeroclipboard elements hover styling */
+body[data-theme="default-light"] .button.current {color:#fff;background-color: #0084FF;}
+body[data-theme="default-light"] .button.current:hover {background-color: #001C35;}
+/* button contrast style - sits directly on the background */
+body[data-theme="default-light"] .button-contrast {background-color:transparent;}
+body[data-theme="default-light"] .button-contrast:hover,
+body[data-theme="default-light"] .button-contrast.hover {color:#343434;background-color:transparent;}
+body[data-theme="default-light"] .button-contrast.current {color:#0084FF;background-color: transparent;}
+body[data-theme="default-light"] .button-contrast.current:hover,
+body[data-theme="default-light"] .button-contrast.current.hover {color:#001C35;background-color: transparent}
+	/* parameters */
+body[data-theme="default-light"] #params > li label {color:#0084ff;border:none;background-color: #dedede;}
+body[data-theme="default-light"] #params > li label:after {color:#d2d2d2;}
+body[data-theme="default-light"] #params .tt-input {border:1px solid #BFBFBF;}
+body[data-theme="default-light"] #params.autocompleteOpen .tt-input {color:#999;background-color: #ccc;border:none;}
+body[data-theme="default-light"] #params.autocompleteOpen .tt-input.active {color:#222;background-color: #fff;box-shadow:0 0px 10px rgba(0, 0, 0, 0.3);}
+body[data-theme="default-light"] #params .tt-menu{ box-shadow:0 3px 10px rgba(0, 0, 0, 0.3); background-color: #f9f9f9;border-color:#ddd;}
+/* selected suggestion in menu */
+body[data-theme="default-light"] #params .tt-cursor,
+body[data-theme="default-light"] #params .tt-suggestion:hover {color:#fff;background-color: #D8009B;}
+/* highlighted query character */
+body[data-theme="default-light"] #params .tt-highlight {color: #D8009B;}
+/* selected suggestion +  highlighted query characters */
+body[data-theme="default-light"] #params .tt-cursor .tt-highlight,
+body[data-theme="default-light"] #params .tt-suggestion:hover .tt-highlight {color:#B6FF00;}
+body[data-theme="default-light"] #generated_url a {}
+body[data-theme="default-light"] #generated_url a:hover {border-bottom-color:#309afc;}
+body[data-theme="default-light"] #generated_url .part {color:#001220;}
+body[data-theme="default-light"] #generated_url .param {color:#D8009B;}
+body[data-theme="default-light"] #generated_url .sep {color:#BDBDBD;}
+body[data-theme="default-light"] #generated_url .eq {color:#FF8EBD;}
+body[data-theme="default-light"] a.url-go {color:#fff;background-color: #0084FF;}
+body[data-theme="default-light"] a.url-go:hover {background-color:#001C35;}
+/* Copy button alert */
+body[data-theme="default-light"] .url-options .alert {background-color: #D0D0D0;box-shadow:0 0 3px 1px rgba(255,255,255,.08)};
+body[data-theme="default-light"] .configure .url-options {border-color: #aaa}
+
+
+/* ----- Dark ----- */
+body[data-theme="default-dark"] {color:#ccc;background-color: #111615;}
+body[data-theme="default-dark"] h1{color:#ddd;}
+body[data-theme="default-dark"] h3 {color:#888888;border-bottom-color:#666;}
+body[data-theme="default-dark"] a,
+body[data-theme="default-dark"] a:active,
+body[data-theme="default-dark"] a:visited {color:#0084FF;}
+body[data-theme="default-dark"] .toolbox {background-color: #333;}
+body[data-theme="default-dark"] .toolbox .log.hover {color:#648099;}
+
+/* standard button styles */
+body[data-theme="default-dark"] .button {color:#656565;background-color: #272727;box-shadow: 0 0 2px rgba(0,0,0,0.8);}
+body[data-theme="default-dark"] .button:hover,
+body[data-theme="default-dark"] .button.hover{color:#8b8b8b;background-color:#000;} /* .hover class is for zeroclipboard elements hover styling */
+body[data-theme="default-dark"] .button.current {color:#111;background-color:#0084FF;box-shadow: 0 0 3px rgba(0,0,0,0.8);}
+body[data-theme="default-dark"] .button.current:hover {background-color:#0099FF;}
+/* button contrast style - sits directly on the background */
+body[data-theme="default-dark"] .button-contrast {color:#6E6E6E;background-color: transparent;box-shadow: none;}
+body[data-theme="default-dark"] .button-contrast:hover,
+body[data-theme="default-dark"] .button-contrast.hover {color:#bbb;background-color:transparent;}
+body[data-theme="default-dark"] .button-contrast.current {color:#0084FF;background-color: transparent;}
+body[data-theme="default-dark"] .button-contrast.current:hover,
+body[data-theme="default-dark"] .button-contrast.current.hover {color:#0099FF;background-color: transparent;}
+/* parameters */
+body[data-theme="default-dark"] #params > li label {color:#1890FF;border:none;background-color: #2D2C2C;}
+body[data-theme="default-dark"] #params label:after {color:#666;}
+body[data-theme="default-dark"] #params .tt-input {color:#e0e0e0;background-color: #111615;}
+body[data-theme="default-dark"] #params.autocompleteOpen .tt-input {color:#555;background-color: #222;}
+body[data-theme="default-dark"] #params.autocompleteOpen .tt-input.active {color:#000;background-color: #fff;}
+/* selected suggestion in menu */
+body[data-theme="default-dark"] #params .tt-cursor,
+body[data-theme="default-dark"] #params .tt-suggestion:hover{color:#fff;background-color: #9E024F;}
+/* highlighted query character */
+body[data-theme="default-dark"] #params .tt-highlight {color: #9E024F;}
+/* selected suggestion +  highlighted query characters */
+body[data-theme="default-dark"] #params .tt-cursor .tt-highlight,
+body[data-theme="default-dark"] #params .tt-suggestion:hover .tt-highlight {color:#B6FF00;}
+body[data-theme="default-dark"] #generated_url a {color:#DFF2B1;border-bottom:2px dotted #555;}
+body[data-theme="default-dark"] #generated_url .part {color:#ddd;}
+body[data-theme="default-dark"] #generated_url .param {color:#2A98FF;}
+body[data-theme="default-dark"] #generated_url .sep {color:#2EC800;}
+body[data-theme="default-dark"] #generated_url .eq {color:#0068CA;}
+body[data-theme="default-dark"] #generated_url a:hover {border-bottom-color: #777;}
+body[data-theme="default-dark"] #generated_url a:hover .part {color:#fff;}
+body[data-theme="default-dark"] #generated_url a:hover .param {color:#00BDFF;}
+body[data-theme="default-dark"] #generated_url a:hover .sep  {color:#2A870E;}
+body[data-theme="default-dark"] #generated_url a:hover .eq  {color:#006CAB;}
+body[data-theme="default-dark"] a.url-go {color:#000;background-color: #910349;}
+body[data-theme="default-dark"] a.url-go:hover {background-color:#B30058;}
+/* Copy button alert */
+body[data-theme="default-dark"] .url-options .alert {background-color: #404443;}
+body[data-theme="default-dark"] .configure .url-options {border-color: #555;}
