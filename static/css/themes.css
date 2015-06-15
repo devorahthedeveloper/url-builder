@@ -59,7 +59,6 @@ body[data-theme="default-dark"] a:active,
 body[data-theme="default-dark"] a:visited {color:#0084FF;}
 body[data-theme="default-dark"] .toolbox {background-color: #333;}
 body[data-theme="default-dark"] .toolbox .log.hover {color:#648099;}
-
 /* standard button styles */
 body[data-theme="default-dark"] .button {color:#656565;background-color: #272727;box-shadow: 0 0 2px rgba(0,0,0,0.8);}
 body[data-theme="default-dark"] .button:hover,
