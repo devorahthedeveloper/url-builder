@@ -21,7 +21,7 @@ $db['params'] = Flintstone::load('params', $db_options);
 $db['props'] = Flintstone::load('props', $db_options);
 
 // Seed the database
-// seedDatabases($db['params'], $db['props']);
+seedDatabases($db['params'], $db['props']);
 
 /* Endpoints
 ------------------------------------
