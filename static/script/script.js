@@ -143,7 +143,6 @@ $(function(){
 			opts: {
 				highlight: true,
 				hint: false,
-				limit:10,
 				minLength:0
 			}
 		},
@@ -156,20 +155,17 @@ $(function(){
 			// attach typeahead functionality
 			item.typeahead(autocomplete.defaults.opts, {
 				source: autocomplete.defaults.filterFn(dataset),
+				limit:300 // limit only worked when included here, even though docs say to include in the first obj argument
 			});
 
 			// Attach change handler
-			// Must be attached directly to each instance via native change event
-			// At current time, typeahead's change event is not working
-			// Therefore we cannot use event delegation.
-			item.on('change', handlers.onChange);
-
-			$(document).on('typeahead:active', handlers.onActive);
-			$(document).on('typeahead:close', handlers.onClose);
-			$(document).on('typeahead:open', handlers.onOpen);
-			$(document).on('typeahead:render', handlers.onRender);
-			$(document).on('typeahead:select', handlers.onSelect);
-			$(document).on('typeahead:idle', handlers.onIdle);
+			item.on('change', handlers.onChange); // typeahead's namespaced change event is not working - use native
+			item.on('typeahead:active', handlers.onActive);
+			item.on('typeahead:close', handlers.onClose);
+			item.on('typeahead:open', handlers.onOpen);
+			item.on('typeahead:render', handlers.onRender);
+			item.on('typeahead:select', handlers.onSelect);
+			item.on('typeahead:idle', handlers.onIdle);
 		}
 	};
 
