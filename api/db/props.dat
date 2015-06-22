@@ -1,0 +1,2 @@
+protocol=["https","http"]
+environment={"qa":"secure9x.fxcorporate.com\/tr\/","uat":"secure9z.fxcorporate.com\/tr\/","prod":"secure4.fxcorporate.com\/tr\/"}
