@@ -179,8 +179,8 @@ $(function(){
 		params : {
 			product: ['basketball','candlesticks','carrier-pigeon','hairbrush','portable_grill','socks','soda_machine','tweezers','tutu','tea_bags'],
 			priority: ['1', '2', '3', '4', '5', '6'],
-			application_type: ['individual', 'corporation', 'couple', 'child'],
 			id: ['a1a2kk', 'a33kdd', 'aabd33k', 'bbke33','cc9d9c', 'e3f35k', 'f8d8sss'],
+			application_type: ['individual', 'corporation', 'couple', 'child'],
 			ccy: ['aud','cad','chf','eur','gbp','hkd','jpy','nzd','usd'],
 			locale: ['ar_AE','de_DE','el_GR','en_US','es_ES','fr_FR','it_IT','iw_IL','ja_JP','pl_PL','pt_BR','ru_RU','sv_SE','tr_TR','zh_CN','zh_TW'],country: ['afghanistan','albania','algeria','american_samoa','andorra','angola','anguilla','antigua_and_barbuda','argentina','armenia','aruba','austria','azerbaijan','bahamas','bahrain','bangladesh','barbados','belgium','belize','benin','bermuda','bhutan','bolivia','bosnia_and_herzegovina','botswana','british_virgin_islands','brunei','bulgaria','burkina_faso','burundi','cambodia','cameroon','cape_verde_islands','cayman_islands','central_african_republic','chad','chile','china','colombia','comoros','costa_rica','croatia','cyprus','czech_republic','denmark','djibouti','dominica','dominican_republic','ecuador','egypt','el_salvador','equatorial_guinea','eritrea','estonia','ethiopia','falkland_islands','faroe_islands','fiji','finland','france','gabon','gambia','georgia','germany','ghana','gibraltar','greece','greenland','grenada','guam','guatemala','guinea','guinea','guyana','haiti','honduras','hungary','iceland','india','indonesia','iraq','ireland','isle_of_man','israel','italy','jamaica','jordan','kazakhstan','kenya','kiribati','kuwait','kyrgyzstan','laos','latvia','lebanon','lesotho','liechtenstein','lithuania','luxembourg','macao','macedonia','madagascar','malawi','malaysia','maldives','mali','malta','marshall','mauritania','mauritius','mexico','micronesia','moldova','monaco','mongolia','montenegro','morocco','mozambique','namibia','nauru','nepal','netherlands','netherlands_antilles','new_zealand','nicaragua','niger','nigeria','northern_mariana_islands','norway','oman','pakistan','palau','panama','papua_new_guinea','paraguay','peru','philippines','poland','portugal','puerto_rico','qatar','romania','russia','rwanda','saint_kitts_and_nevis','saint_lucia','saint_vincent','samoa','san_marino','sao_tome_and_principe','saudi_arabia','senegal','serbia','seychelles','sierra_leone','slovak_republic','slovenia','solomon_islands','south_africa','spain','sri_lanka','st_helena','suriname','swaziland','sweden','switzerland','taiwan','tajikistan','tanzania','thailand','togo','tonga','trinidad_and_tobago','tunisia','turkey','turkmenistan','turks_and_caicos','tuvalu','uganda','ukraine','united_arab_emirates','united_kingdom','united_states','uruguay','uzbekistan','vanuatu','venezuela','vietnam','virgin_islands_us','yemen','zambia'],
 			execution: ['return_first', 'return_last', 'in_first', 'out_first'],
@@ -358,7 +358,7 @@ $(function(){
 				items = items.add(params.template({category: category, value: finalValue }));
 			});
 
-			params.bindInputs( items );
+			params.bindInputs( items, data );
 			return items;
 		},
 
@@ -374,9 +374,10 @@ $(function(){
 			url.render();
 		},
 
-		bindInputs: function( items ){
+		bindInputs: function( items, data){
 			items.each(function(){
-				params.bindOneInput($(this).find('input'));
+				var input = $(this).find('input');
+				params.bindOneInput(input, data[input.data('category')]);
 			});
 
 			params.$el.on('click', params.deleteElClass, function(e){
@@ -390,8 +391,9 @@ $(function(){
 			});
 		},
 
-		bindOneInput: function( item ){
-			var data = model.params[item.data('category')];
+		bindOneInput: function( item, data ){
+			var category = item.data('category');
+
 			var handlers = {
 				onActive: function(){},
 				onChange: function(e){
@@ -415,20 +417,24 @@ $(function(){
 			};
 
 			autocomplete.bind(item, data, handlers);
+
 		},
 
-		setUpOnLoad: function(){
-			var localModel = model.params;
+		setUpOnLoad: function(data){
+			// var localModel = model.params;
+
 			var queryString = $.deparam(document.location.search);
 
 			// Update the viewModel with any data injected from the queryString
 			// Validate all values before updating viewModel
 			if(queryString) {
+
 				_.each(queryString, function(value, key, obj){
-					if (_.has(localModel, key)){
+
+					if (_.has(data.params, key)){
 						viewModel.set('params', key, value);
 					} else if (key === 'environment') {
-						viewModel.set('urlProperties', 'environment', model.urlProperties.environment[value]);
+						viewModel.set('urlProperties', 'environment', data.urlProperties.environment[value]);
 					} else if (key === 'protocol') {
 						viewModel.set('urlProperties', 'protocol', value);
 					}
@@ -438,12 +444,12 @@ $(function(){
 			}
 		},
 
-		init: function(){
-			// prep viewModel - see if we have any injected data to use to build the state
-			params.setUpOnLoad();
+		init: function(data){
+			// prep viewModel - see if we have any data in the query string to use to build the state
+			params.setUpOnLoad(data);
 
 			// Render the params based on the updated viewModel and append to DOM
-			var items = params.renderAll(model.params, viewModel.getCategory('params'));
+			var items = params.renderAll(data.params, viewModel.getCategory('params'));
 			util.appendHTML(items, params.$el);
 		}
 	};
@@ -533,11 +539,23 @@ $(function(){
 	/* -------------------------------------- */
 
 	var bootstrap = function() {
-		params.init();
-		urlProperties.init();
-		url.init();
-		clipboard.init();
-		config.init();
+
+		$.when(
+			$.get( "api/params" ),
+			$.get( "api/props" )
+
+		).then(function( paramsData, propsData ) {
+			var data = {
+				params: paramsData[0],
+				urlProperties: propsData[0]
+			};
+
+			params.init(data);
+			urlProperties.init(data);
+			url.init();
+			clipboard.init();
+			config.init();
+		});
 	}
 
 	bootstrap();
